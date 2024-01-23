@@ -10,9 +10,9 @@ fn main() {
 
 fn parse_line(line: &str) -> u32 {
     let (winning_numbers, mut numbers) = {
-        let game = line.split_once(": ").unwrap().1;
+        let card = line.split_once(": ").unwrap().1;
 
-        let mut table = game.split(" | ").map(|list| {
+        let mut table = card.split(" | ").map(|list| {
             list.split_whitespace()
                 .map(|s| s.parse().unwrap())
                 .collect::<Vec<u32>>()
