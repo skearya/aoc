@@ -1,5 +1,3 @@
-use std::time::{Duration, Instant};
-
 #[derive(Debug, Clone)]
 struct Card {
     num: u32,
