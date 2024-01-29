@@ -15,20 +15,18 @@ fn main() {
         })
         .collect();
 
-    let first = nodes.iter().find(|node| node.0 == "AAA").unwrap();
+    println!("steps: {}", traverse_node("AAA", &nodes, &mut instructions));
+}
 
-    let mut steps = 0;
-    let mut next = if instructions.next().unwrap() == 'L' {
-        first.1 .0
-    } else {
-        first.1 .1
-    };
+fn traverse_node(
+    key: &str,
+    nodes: &Vec<(&str, (&str, &str))>,
+    instructions: &mut std::iter::Cycle<std::str::Chars<'_>>,
+) -> i32 {
+    let mut step = 0;
+    let mut next = key;
 
-    loop {
-        let node = nodes.iter().find(|x| x.0 == next).unwrap();
-
-        steps += 1;
-
+    while let Some(node) = nodes.iter().find(|node| node.0 == next) {
         if node.0 == "ZZZ" {
             break;
         }
@@ -38,7 +36,9 @@ fn main() {
         } else {
             (node.1).1
         };
+
+        step += 1;
     }
 
-    println!("steps: {steps}");
+    step
 }
