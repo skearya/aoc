@@ -10,7 +10,10 @@ fn main() {
         .map(|line| {
             (
                 line.0,
-                line.1.trim_matches(&['(', ')']).split_once(", ").unwrap(),
+                line.1
+                    .trim_matches(&['(', ')'] as &[char])
+                    .split_once(", ")
+                    .unwrap(),
             )
         })
         .collect();
