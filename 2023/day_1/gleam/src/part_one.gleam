@@ -17,8 +17,7 @@ pub fn main() {
         |> string.to_graphemes
         |> list.filter_map(int.parse)
 
-      let assert Ok(first) = list.first(nums)
-      let assert Ok(last) = list.last(nums)
+      let assert [Ok(first), Ok(last)] = [list.first(nums), list.last(nums)]
 
       first * 10 + last
     })
