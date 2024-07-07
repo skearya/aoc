@@ -102,7 +102,7 @@ fn traverse(
     (mut row, mut col): &(usize, usize),
     mut prev_dir: Direction,
 ) -> Vec<(usize, usize)> {
-    let mut path = Vec::from([(row, col)]);
+    let mut path = Vec::new();
 
     loop {
         path.push((row, col));
