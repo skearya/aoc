@@ -18,7 +18,7 @@
 ; }
 
 section .data
-    input: incbin "input.txt"
+    input: incbin "../input.txt"
     input_len: equ $-input
 
 section .text
