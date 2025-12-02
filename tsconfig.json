@@ -5,6 +5,10 @@
 		"module": "commonjs",
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"strict": true
+		"strict": true,
+		"baseUrl": ".",
+		"paths": {
+			"cheats": ["./utils.ts"]
+		}
 	}
 }

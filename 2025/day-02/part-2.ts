@@ -1,4 +1,4 @@
-import ".././utils.ts";
+import "cheats";
 import { readFileSync } from "node:fs";
 
 const input = readFileSync("input.txt", "utf-8");
