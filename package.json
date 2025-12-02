@@ -1,0 +1,25 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "(bad) aoc solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skearya/aoc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/skearya/aoc/issues"
+  },
+  "homepage": "https://github.com/skearya/aoc#readme",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.21.0"
+  }
+}
