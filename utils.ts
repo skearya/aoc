@@ -137,3 +137,46 @@ define(Array.prototype, function permutations() {
 
 	return result;
 });
+
+export class OrderedSet<T> {
+	set: Set<string>;
+	array: T[];
+	stringify: (item: T) => string;
+
+	constructor(stringify: (item: T) => string) {
+		this.set = new Set();
+		this.array = [];
+		this.stringify = stringify;
+	}
+
+	get content() {
+		return this.array;
+	}
+
+	get length() {
+		return this.array.length;
+	}
+
+	push(item: T) {
+		const key = this.stringify(item);
+
+		if (!this.set.has(key)) {
+			this.array.push(item);
+			this.set.add(key);
+		}
+	}
+
+	pop(): T | undefined {
+		const item = this.array.pop();
+		if (item) this.set.delete(this.stringify(item));
+
+		return item;
+	}
+
+	shift(): T | undefined {
+		const item = this.array.shift();
+		if (item) this.set.delete(this.stringify(item));
+
+		return item;
+	}
+}
